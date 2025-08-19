@@ -12,11 +12,11 @@ const Navbar = () => {
                 </a>
 
                 <div className=' h-12 w-auto md:flex hidden flex-row items-center justify-center gap-1'>
-                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 '>সর্বশেষ</Link>
-                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 '>জাতীয়</Link>
-                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 '>রাজনীতি</Link>
-                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 '>আন্তর্জাতিক</Link>
-                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 '>সারাদেশ</Link>
+                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 ' to="/latest">সর্বশেষ</Link>
+                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 ' to="/national">জাতীয়</Link>
+                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 ' to="/politics">রাজনীতি</Link>
+                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 ' to="/international">আন্তর্জাতিক</Link>
+                    <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 ' to="/">সারাদেশ</Link>
 
 
                 </div >
