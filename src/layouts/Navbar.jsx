@@ -5,8 +5,11 @@ import { FaBars, FaSearch } from "react-icons/fa";
 const Navbar = () => {
     return (
         <section className='w-full h-auto px-2 p-1'>
-            <nav className='w-full bg-cyan-700 text-white rounded-lg p-1 px-2 h-12 flex flex-row items-center justify-around'>
-                <a href="/" className='text-2xl font-bold'>Daily News</a>
+            <nav className='w-full bg-cyan-700 text-white rounded-lg p-1 px-2 h-12 flex flex-row items-center justify-around z-40'>
+                <a href="/" className='text-2xl font-bold h-12 flex flex-row gap-2 items-center justify-center'>
+                    <span>Daily</span>
+                    <span className='text-red-300'>News</span>
+                </a>
 
                 <div className=' h-12 w-auto md:flex hidden flex-row items-center justify-center gap-1'>
                     <Link className='px-2 h-12 flex items-center justify-center hover:border-b-2 '>সর্বশেষ</Link>
@@ -30,6 +33,8 @@ const Navbar = () => {
                 </div>
 
             </nav>
+
+            
         </section>
     )
 }
