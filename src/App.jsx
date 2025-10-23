@@ -15,7 +15,7 @@ const App = () => {
     <div className='w-full relative overflow-x-hidden'  >
       <Navbar />
       <Sidebar />
-      <div>
+      <div className='w-full min-h-[800px] flex items-center justify-center'>
         <Routes>
           <Route path='/' element={<Home/>}/>
 
@@ -30,7 +30,7 @@ const App = () => {
 
         </Routes>
       </div>
-      <img src={bgImage} alt="" className='w-full h-screen object-cover fixed -z-50'/>
+      <img src={bgImage} alt="" className='w-full h-screen object-cover fixed top-0 left-0 -z-50'/>
       <Footer />
 
     </div>

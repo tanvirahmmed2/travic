@@ -1,10 +1,13 @@
 import React from 'react'
 
+
 const Error = () => {
   return (
-    <div>
-      
-    </div>
+    <section className='w-full items-center justify-center flex flex-col gap-2'>
+        <h1 className='text-2xl font-semibold '>Sorry dear!</h1>
+        <p className='text-6xl font-bold'>404</p>
+        <p className='font-bold'>Page not found</p>
+    </section>
   )
 }
 
