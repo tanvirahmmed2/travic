@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 
 
 export const ThemeContext= createContext()
@@ -7,10 +7,12 @@ export const ThemeContext= createContext()
 
 const ContextProvider = ({children}) => {
 
+  const [menu, setMenu]= useState(false)
 
 
 
   const ContextValue={
+    menu, setMenu,
 
   }
 
