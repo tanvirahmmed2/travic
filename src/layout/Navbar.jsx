@@ -9,7 +9,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className='w-full h-16 backdrop-blur-3xl bg-white/70 fixed flex px-4 md:px-8 flex-row items-center justify-around md:justify-between'>
+    <nav className='w-full h-16 backdrop-blur-3xl bg-white/70 fixed flex px-4 md:px-8 flex-row items-center justify-between'>
       <a href="/" className=' font-semibold text-xl md:text-3xl sm:text-2xl'>
         Travic
       </a>

@@ -1,4 +1,8 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
+import {motion} from 'framer-motion'
+
+
 
 const Register = () => {
 
@@ -9,11 +13,13 @@ const Register = () => {
   }
   return (
     <section className='w-full min-h-[800px] flex items-center justify-center'>
-      <div className='p-2 md:p-4 w-auto h-auto flex flex-col md:flex-row items-center justify-center gap-2 bg-white rounded-lg'>
+      <motion.div initial={{opacity: 0, scale: 0.9}} whileInView={{opacity:1, scale:1}} transition={{duration:0.4}}  className='p-2 md:p-4 min-w-[320px] sm:min-w-[520px] md:min-w-[620px] w-auto h-auto flex flex-col md:flex-row items-center justify-center gap-2 bg-white rounded-lg'>
 
-        <div className='w-auto flex flex-col gap-4 p-2 items-center justify-center'>
-          <p>W</p>
-
+        <div className='w-auto flex flex-col p-2 items-center justify-center'>
+          <p >Secure your tour & travels with</p>
+          <h1 className='text-4xl font-semibold text-cyan-600'>Travic</h1>
+          <p>Register and become our best partner</p>
+          <Link className='text-xs italic mt-6 text-cyan-500' to='/login'>Already have an account! Login </Link>
         </div>
 
 
@@ -30,9 +36,9 @@ const Register = () => {
             <label htmlFor="password">Password</label>
             <input type="password" name='password' id='password' required className='w-full outline-none p-1 px-2 rounded-md border-[1px] border-black' />
           </div>
-          <button type='submit' className='border-cyan-700 border-[1px] rounded-md hover:bg-cyan-700 hover:text-white p-1 transition duration-500 ease-in-out'>Sign up</button>
+          <button type='submit' className='border-cyan-700 border-[1px] rounded-md hover:bg-cyan-700 hover:text-white p-1 transition duration-500 ease-in-out'>Register</button>
         </form>
-      </div>
+      </motion.div>
 
     </section>
   )
