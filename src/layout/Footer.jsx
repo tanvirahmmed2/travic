@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <section className='w-full flex flex-col itemc justify-between gap-4'>
+    <section className='w-full flex flex-col itemc justify-between '>
       <footer className='w-full flex flex-col md:flex-col items-center justify-center gap-4 bg-white'>
 
       </footer>

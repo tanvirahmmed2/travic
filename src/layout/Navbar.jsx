@@ -17,8 +17,8 @@ const Navbar = () => {
 
       <div className='h-full w-auto hidden md:flex flex-row items-center justify-center gap-2'>
         <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/'>Home</Link>
-        <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/tour'>Tour</Link>
-        <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/campaign'>Campaign</Link>
+        <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/tours'>Tours</Link>
+        <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/blogs'>Blogs</Link>
         <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/about'>About</Link>
         <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/book'>Book</Link>
 
