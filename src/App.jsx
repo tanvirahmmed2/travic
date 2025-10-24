@@ -9,6 +9,8 @@ import Error from './pages/Error'
 import Login from './user/Login'
 import Register from './user/Register'
 import Book from './user/Book'
+import Tours from './pages/Tours'
+import Tour from './components/Tour'
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
 
 
 
+          <Route path='/tours' element={<Tours/>}/>
+          <Route path='/tours/:id' element={<Tour/>}/>
           <Route path='/book' element={<Book/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
