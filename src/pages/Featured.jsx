@@ -5,7 +5,7 @@ import { features } from '../data/featured'
 const Featured = () => {
   return (
     <section className='w-full flex items-center justify-center  bg-white py-8'>
-      <div className='w-5/6 flex flex-col md:flex-row items-center justify-center gap-4 text-center'>
+      <div className='w-5/6 grid grid-cols-2 gap-4 text-center'>
       {
         features.map((feature) => {
           const { icon, title, description } = feature
