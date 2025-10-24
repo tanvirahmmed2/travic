@@ -10,7 +10,7 @@ const Featured = () => {
         features.map((feature) => {
           const { icon, title, description } = feature
           return <div key={icon} className='w-full border-[1px] shadow-xl bg-white flex flex-col items-center justify-center gap-2 p-2 rounded-lg'>
-            <p><FontAwesomeIcon icon={icon} /></p>
+            <p className='text-3xl'><FontAwesomeIcon icon={icon} /></p>
             <p className='text-xl font-semibold'>{title}</p>
             <p className='opacity-60'>{description}</p>
 

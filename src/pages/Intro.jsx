@@ -14,21 +14,26 @@ const Intro = () => {
             </div>
             <Link to='/tours' className='p-2 px-8 rounded-lg text-white hover:bg-red-400 bg-red-500 '>Tours</Link>
 
-            
-            <form className='w-5/6 flex flex-col md:flex-row items-center justify-center gap-4'>
 
-                <select name="from" id="from" className='w-full h-14 bg-white border-[1px] border-red-600 outline-none rounded-lg p-4'>
-                    <option value="">choose your location</option>
-                    {
-                        cities.map((city) => { return <option value={city} key={city}>{city}</option> })
-                    }
-                </select>
-                <select name="to" id="to" className='w-full h-14 bg-white border-[1px] border-red-600 outline-none rounded-lg p-4'>
-                    <option value="" >choose your destionation</option>
-                    {
-                        cities.map((city) => { return <option value={city} key={city}>{city}</option> })
-                    }
-                </select>
+            <form className='w-5/6 flex flex-col md:flex-row items-center justify-center gap-4'>
+                <div className='w-full h-14 flex flex-col items-start justify-between bg-white border-[1px] rounded-lg overflow-hidden px-4 border-red-600'>
+                    <label htmlFor="from">From</label>
+                    <select name="from" id="from" className='w-full   outline-none  px-2 h-full'>
+                        {
+                            cities.map((city) => { return <option value={city} key={city}>{city}</option> })
+                        }
+                    </select>
+                </div>
+                <div className='w-full h-14 flex flex-col items-start justify-between bg-white border-[1px] rounded-lg overflow-hidden px-4 border-red-600'>
+                    <label htmlFor="to">To</label>
+                    <select name="to" id="to" className='w-full   outline-none  px-2 h-full'>
+                        {
+                            cities.map((city) => { return <option value={city} key={city}>{city}</option> })
+                        }
+                    </select>
+                </div>
+
+
                 <button className='w-full h-14 text-white font-semibold text-xl rounded-lg bg-red-600'>Search</button>
             </form>
 
