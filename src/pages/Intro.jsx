@@ -10,7 +10,7 @@ const Intro = () => {
             <div className='w-full flex flex-col items-center justify-center gap-2'>
                 <p className='text-6xl text-center font-semibold'>EXPERINCE THE</p>
                 <p className='text-6xl text-center font-semibold'>NATURE'S BEAUTY</p>
-                <p className='text-base lg:text-lg text-center'><span>Travic</span> turn travel dreams into reality. With expert planning, curated destinations, and a passion for exploration, we help travelers discover the world effortlessly. Explore. Experience. Enjoy.</p>
+                <p className='w-full md:w-4/5 lg:w-3/4 text-base lg:text-lg text-center'><span>Travic</span> turn travel dreams into reality. With expert planning, curated destinations, and a passion for exploration, we help travelers discover the world effortlessly. Explore. Experience. Enjoy.</p>
             </div>
             <Link to='/tours' className='p-2 px-8 rounded-lg text-white hover:bg-red-400 bg-red-500 '>Tours</Link>
 
