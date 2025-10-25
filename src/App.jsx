@@ -17,7 +17,7 @@ const App = () => {
     <div className='w-full relative overflow-x-hidden'  >
       <Navbar />
       <Sidebar />
-      <div className='w-full min-h-[800px] flex items-center justify-center mt-20'>
+      <div className='w-full min-h-[800px] flex items-center justify-center mt-14'>
         <Routes>
           <Route path='/' element={<Home/>}/>
 
