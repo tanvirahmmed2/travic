@@ -24,8 +24,8 @@ const Tour = () => {
       <p>{description}</p>
 
 
-      <div className='w-full grid grid-cols-2 justify-items-center gap-4'>
-        <div className='w-full flex flex-col gap-2 bg-white p-4 rounded-md'>
+      <div className='w-full lg:w-4/5 grid grid-cols-2 justify-items-center gap-4'>
+        <div className='w-full flex flex-col gap-2 bg-white shadow-lg p-4 rounded-md'>
           <h1 className='text-lg md:text-2xl font-semibold'>Special highlights</h1>
           {
             highlights.map((e) => {
@@ -33,7 +33,7 @@ const Tour = () => {
             })
           }
         </div>
-        <div className='w-full flex flex-col gap-2 bg-white p-4 rounded-md'>
+        <div className='w-full flex flex-col gap-2 bg-white shadow-lg p-4 rounded-md'>
           <h1 className='text-lg md:text-2xl font-semibold'>Package includes</h1>
           {
             includes.map((e) => {
@@ -46,11 +46,11 @@ const Tour = () => {
 
       <div className='w-full flex flex-col items-center justify-center gap-1'>
         <div className='w-full text-center lg:w-1/2 flex flex-col md:flex-row items-center justify-center gap-1'>
-          <p className='px-6 p-1 bg-white w-full hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Duration: {duration}</p>
-          <p className='px-6 p-1 bg-white w-full hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Rating: <FontAwesomeIcon icon={faStar} className='text-amber-500' /> {rating}</p>
-          <p className='px-6 p-1 bg-white w-full hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Price: <FontAwesomeIcon icon={faDollar} /> {price}</p>
+          <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Duration: {duration}</p>
+          <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Rating: <FontAwesomeIcon icon={faStar} className='text-amber-500' /> {rating}</p>
+          <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Price: <FontAwesomeIcon icon={faDollar} /> {price}</p>
         </div>
-        <button onClick={()=> alert('Purchased')} className='w-full lg:w-1/2 text-center bg-white p-1 hover:scale-110 transition duration-500 ease-in-out'>Purchase</button>
+        <button onClick={()=> alert('Purchased')} className='w-full lg:w-1/2 text-center shadow-lg bg-white p-1 hover:scale-110 transition duration-500 ease-in-out'>Purchase</button>
       </div>
     </div>
   )
