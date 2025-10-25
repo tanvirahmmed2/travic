@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { cities } from '../data/city'
+import { touristSpots } from '../data/spots'
 
 
 const Intro = () => {
-    const [formData, setFormData]= useState({
-        from: 'Dhaka',
-        to: 'Dubai'
+    const [formData, setFormData] = useState({
+        to: 'Jaflong'
     })
-    
+
     return (
         <section className='w-full flex flex-col items-center justify-center gap-6 min-h-[700px]  p-4'>
 
@@ -21,19 +20,12 @@ const Intro = () => {
 
 
             <form className='w-5/6 flex flex-col md:flex-row items-center justify-center gap-4'>
-                <div className='w-full h-14 flex flex-col items-start justify-between bg-white border-[1px] rounded-lg overflow-hidden px-4 border-red-600'>
-                    <label htmlFor="from">From</label>
-                    <select name="from" id="from"  value={formData.from} className='w-full outline-none  px-2 h-full'>
-                        {
-                            cities.map((city) => { return <option value={city} key={city}>{city}</option> })
-                        }
-                    </select>
-                </div>
+
                 <div className='w-full h-14 flex flex-col items-start justify-between bg-white border-[1px] rounded-lg overflow-hidden px-4 border-red-600'>
                     <label htmlFor="to">To</label>
-                    <select name="to" id="to" value={formData.to} className='w-full   outline-none  px-2 h-full'>
+                    <select name="to" id="to" value={formData.to} onChange={(e) => setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))} className='w-full   outline-none  px-2 h-full'>
                         {
-                            cities.map((city) => { return <option value={city} key={city}>{city}</option> })
+                            touristSpots.map((city) => { return <option value={city} key={city}>{city}</option> })
                         }
                     </select>
                 </div>
