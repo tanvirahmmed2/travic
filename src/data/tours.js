@@ -23,7 +23,7 @@ export const tourData = [
       "Saint Martin’s Island",
       "Laboni Beach"
     ],
-    "image": "https://example.com/images/coxsbazar.jpg",
+    "image": "https://www.bangladeshtravelandtours.com/wp-content/uploads/2023/04/95.jpg",
     "description": "Unwind on the golden sands of the world’s longest natural sea beach. Explore coral islands, taste fresh seafood, and enjoy breathtaking sunsets over the Bay of Bengal. Perfect for couples and families seeking a tropical retreat."
   },
   {
@@ -49,7 +49,7 @@ export const tourData = [
       "Nafakhum Waterfall",
       "Tribal villages"
     ],
-    "image": "https://example.com/images/bandarban.jpg",
+    "image": "https://bangladeshexplore.com/wp-content/uploads/2025/10/Bandarban-Hill-Tracts.webp",
     "description": "Experience Bangladesh’s mountain beauty — hike to Nilgiri, meet indigenous communities, and camp near Boga Lake. An adventure lover’s dream with scenic views and cultural depth."
   },
   {
@@ -74,7 +74,7 @@ export const tourData = [
       "Karamjal Eco Park",
       "Dolphin sightings"
     ],
-    "image": "https://example.com/images/sundarbans.jpg",
+    "image": "https://www.sundarbanwildlifetourism.com/wp-content/uploads/2024/08/tigress.jpg",
     "description": "Sail through the world’s largest mangrove forest and discover a unique ecosystem. From crocodiles to spotted deer, this journey through the Sundarbans will connect you with raw nature."
   },
   {
@@ -100,7 +100,7 @@ export const tourData = [
       "Bichanakandi",
       "Tea Gardens"
     ],
-    "image": "https://example.com/images/sylhet.jpg",
+    "image": "https://tripjive.com/wp-content/uploads/2024/11/What-are-the-most-breathtaking-natural-attractions-in-Sylhet-768x439.jpg",
     "description": "Immerse yourself in Sylhet’s emerald beauty — from floating forests to limestone rivers and rolling tea estates. A tranquil escape for photographers and nature seekers."
   },
   {
@@ -126,7 +126,7 @@ export const tourData = [
       "Panam City",
       "Sadarghat River Port"
     ],
-    "image": "https://example.com/images/dhaka.jpg",
+    "image": "https://royalbengaltours.com/wp-content/uploads/2021/06/Sonargaon-the-first-capital-of-Bengal.webp",
     "description": "Discover Bangladesh’s historical gems — Mughal-era architecture, vibrant rickshaw streets, and the ancient capital Sonargaon. Ideal for culture lovers and history enthusiasts."
   },
   {
@@ -151,7 +151,7 @@ export const tourData = [
       "Hanging Bridge",
       "Tribal Handicrafts Market"
     ],
-    "image": "https://example.com/images/rangamati.jpg",
+    "image": "https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/Aq2v2rvNn2uNXzON/461858746_122105351204546729_1590288082567401798_n-mePvPrbpB5tbBwbP.jpg",
     "description": "Cruise through blue waters and forested hills of Kaptai Lake. A peaceful escape where nature and culture coexist in harmony."
   },
   {
@@ -177,7 +177,7 @@ export const tourData = [
       "Rajshahi Silk Factory",
       "Padma River Sunset"
     ],
-    "image": "https://example.com/images/rajshahi.jpg",
+    "image": "https://www.tbsnews.net/sites/default/files/styles/infograph/public/images/2025/06/25/horse_chariot_local_heritage_1.jpg",
     "description": "Explore the ancient Silk City, home to temples, mosques, and the serene Padma River. A quiet yet enriching experience."
   },
   {
@@ -202,7 +202,7 @@ export const tourData = [
       "Lebur Char",
       "Rakhine Village"
     ],
-    "image": "https://example.com/images/kuakata.jpg",
+    "image": "https://ibradan.com/wp-content/uploads/Sea-Beach-3-scaled.jpeg",
     "description": "Witness both sunrise and sunset over the sea — a rare wonder in Kuakata. Known as the ‘Daughter of the Sea’, it’s a peaceful beach escape."
   },
   {
@@ -228,7 +228,7 @@ export const tourData = [
       "Gokul Medh",
       "Museum visits"
     ],
-    "image": "https://example.com/images/paharpur.jpg",
+    "image": "https://bdscenictours.b-cdn.net/wp-content/uploads/2019/12/Ancient-Civilization-Tour.jpg",
     "description": "Travel back to the 8th century at Paharpur’s Buddhist ruins — a UNESCO site that reveals Bangladesh’s ancient past."
   },
   {
@@ -253,11 +253,10 @@ export const tourData = [
       "Madhabpur Lake",
       "Tribal villages"
     ],
-    "image": "https://example.com/images/sreemangal.jpg",
+    "image": "https://cdn-gdpal.nitrocdn.com/wYTsNDvTtivyqMQKozkdeShFCCdGExJz/assets/images/optimized/rev-b1c501a/wp-content/uploads/2022/07/1-3-1.jpg",
     "description": "Smell the aroma of tea and rain-soaked forests in the peaceful town of Sreemangal. Great for eco-tourism lovers and photographers."
   },
 
-  // 🇮🇳 INDIA TOURS
   {
     "id": 11,
     "title": "Taj Mahal & Agra Heritage Tour",
@@ -270,7 +269,7 @@ export const tourData = [
     "departureDates": ["2025-11-08", "2025-12-15", "2026-01-20"],
     "includes": ["Hotel stay", "Breakfast", "Guided tours", "Transport"],
     "highlights": ["Taj Mahal", "Agra Fort", "Mehtab Bagh", "Fatehpur Sikri"],
-    "image": "https://example.com/images/tajmahal.jpg",
+    "image": "https://tajmahalcabs.com/travels/wp-content/uploads/Dawn-Majesty-Taj-Mahal-Sunrise-Trek-picture-Travels-24.jpeg",
     "description": "Marvel at the white marble beauty of the Taj Mahal, symbol of eternal love. Explore Agra’s Mughal heritage and riverfront gardens."
   },
   {
@@ -285,7 +284,7 @@ export const tourData = [
     "departureDates": ["2025-11-03", "2025-12-11", "2026-01-30"],
     "includes": ["Hotel stay", "Breakfast", "City tour", "Palace entry"],
     "highlights": ["Amber Fort", "Hawa Mahal", "City Palace", "Jantar Mantar"],
-    "image": "https://example.com/images/jaipur.jpg",
+    "image": "https://www.elejungle.com/uploads/amber-fort.webp",
     "description": "Step into Rajasthan’s royal past — explore palaces, forts, and pink-hued streets filled with vibrant crafts and traditions."
   },
   {
@@ -300,7 +299,7 @@ export const tourData = [
     "departureDates": ["2025-11-18", "2025-12-25", "2026-01-18"],
     "includes": ["Houseboat stay", "Meals", "Guide", "Transfers"],
     "highlights": ["Vembanad Lake", "Alleppey canals", "Kumarakom", "Local villages"],
-    "image": "https://example.com/images/kerala.jpg",
+    "image": "https://images.squarespace-cdn.com/content/v1/5eb8e2907c57723ce63891ca/1592542293201-3DYCYR34WPQ80K5R3AB7/kerala+Backwaters1.jpg",
     "description": "Float through the tranquil backwaters of Kerala on a luxury houseboat — a soothing journey through palm groves and peaceful waters."
   },
   {
@@ -315,7 +314,7 @@ export const tourData = [
     "departureDates": ["2025-11-09", "2025-12-14", "2026-01-28"],
     "includes": ["Hotel stay", "Breakfast", "Toy train ride", "Sightseeing tour"],
     "highlights": ["Tiger Hill", "Batasia Loop", "Tea Gardens", "Himalayan Zoo"],
-    "image": "https://example.com/images/darjeeling.jpg",
+    "image": "https://b2bzend.s3.ap-south-1.amazonaws.com/img/127020/package/images/sikkim-serenity-a-himalayan-escape_1724759121",
     "description": "Enjoy a cool mountain retreat in the Queen of Hills. Watch sunrise over Kanchenjunga and sip world-famous Darjeeling tea."
   },
   {
@@ -330,7 +329,7 @@ export const tourData = [
     "departureDates": ["2025-11-06", "2025-12-22", "2026-01-12"],
     "includes": ["Resort stay", "Breakfast", "Airport transfer", "Beach activities"],
     "highlights": ["Baga Beach", "Fort Aguada", "Bom Jesus Basilica", "Dudhsagar Waterfall"],
-    "image": "https://example.com/images/goa.jpg",
+    "image": "https://assets.serenity.co.uk/38000-38999/38649/1296x864.jpg",
     "description": "Relax under palm trees, enjoy nightlife, and explore Portuguese heritage — Goa blends culture and leisure perfectly."
   },
   {
@@ -345,7 +344,7 @@ export const tourData = [
     "departureDates": ["2025-11-25", "2025-12-30", "2026-01-24"],
     "includes": ["Hotel stay", "Breakfast", "Boat ride", "Temple tour"],
     "highlights": ["Ganga Aarti", "Kashi Vishwanath Temple", "Dashashwamedh Ghat", "Sarnath"],
-    "image": "https://example.com/images/varanasi.jpg",
+    "image": "https://www.indianpanorama.in/assets/images/tourpackages/banner/holy-varanasi.webp",
     "description": "Witness the soul of India in Varanasi — where spirituality meets the eternal Ganges. A deeply cultural and meditative journey."
   },
   {
@@ -360,7 +359,7 @@ export const tourData = [
     "departureDates": ["2025-11-01", "2025-12-12", "2026-02-05"],
     "includes": ["Camp stay", "Meals", "Guide", "4x4 vehicle", "Permits"],
     "highlights": ["Pangong Lake", "Khardung La", "Nubra Valley", "Magnetic Hill"],
-    "image": "https://example.com/images/ladakh.jpg",
+    "image": "https://thedreamridersgroup.com/pages/og/2025-07-23-6880997e885b6.webp",
     "description": "A dream for bikers and trekkers — experience high-altitude passes, turquoise lakes, and ancient monasteries of Ladakh."
   },
   {
@@ -375,7 +374,7 @@ export const tourData = [
     "departureDates": ["2025-11-17", "2025-12-20", "2026-01-29"],
     "includes": ["Hotel stay", "Breakfast", "Transport", "Guided tour"],
     "highlights": ["Mysore Palace", "Brindavan Gardens", "Coffee Estates", "Abbey Falls"],
-    "image": "https://example.com/images/mysore.jpg",
+    "image": "https://api.trekpanda.in/uploads/Mysore%20Palace.jpg",
     "description": "Explore the cultural capital of Karnataka and the misty hills of Coorg — a blend of royal heritage and nature."
   },
   {
@@ -390,7 +389,7 @@ export const tourData = [
     "departureDates": ["2025-11-19", "2025-12-27", "2026-01-30"],
     "includes": ["Hotel stay", "Breakfast & dinner", "Transfers", "Snow activities"],
     "highlights": ["Rohtang Pass", "Solang Valley", "Mall Road", "Kufri"],
-    "image": "https://example.com/images/manali.jpg",
+    "image": "https://media1.thrillophilia.com/filestore/8et7poby4n8z5xx37fs9kpzpf3cq_shutterstock_527473177.jpg?w=576&h=650",
     "description": "Play in snow, enjoy apple orchards, and explore Himalayan villages — a cozy escape for families and couples."
   },
   {
@@ -405,7 +404,7 @@ export const tourData = [
     "departureDates": ["2025-11-04", "2025-12-16", "2026-01-23"],
     "includes": ["Hotel stay", "Breakfast", "Transfers", "Guide"],
     "highlights": ["Tsomgo Lake", "Rumtek Monastery", "MG Marg", "Nathula Pass"],
-    "image": "https://example.com/images/sikkim.jpg",
+    "image": "https://lh7-rt.googleusercontent.com/docsz/AD_4nXddDBE9WGwjwEju5YcDLbMdOAeZHqlwv1n0injimENzQhiRdm2d4ZiofNDzU-FS5WDPfFzp7Up0KD30Tc2U0ndqYaFwtN3kiALh9IbqmS8Hax57OoAHJQPjNhW-xgaxl7Co65JZCg?key=icOI8u0ZLxczPTUYDDSMduah",
     "description": "Enjoy snow-clad peaks, lakes, and monasteries in the serene state of Sikkim — a paradise for nature lovers and peace seekers."
   }
 ];
