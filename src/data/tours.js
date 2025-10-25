@@ -404,7 +404,7 @@ export const tourData = [
     "departureDates": ["2025-11-04", "2025-12-16", "2026-01-23"],
     "includes": ["Hotel stay", "Breakfast", "Transfers", "Guide"],
     "highlights": ["Tsomgo Lake", "Rumtek Monastery", "MG Marg", "Nathula Pass"],
-    "image": "https://lh7-rt.googleusercontent.com/docsz/AD_4nXddDBE9WGwjwEju5YcDLbMdOAeZHqlwv1n0injimENzQhiRdm2d4ZiofNDzU-FS5WDPfFzp7Up0KD30Tc2U0ndqYaFwtN3kiALh9IbqmS8Hax57OoAHJQPjNhW-xgaxl7Co65JZCg?key=icOI8u0ZLxczPTUYDDSMduah",
+    "image": "https://trekinsikkim.in/_next/image?url=https%3A%2F%2Fupload.trekinsikkim.in%2Fuploads%2Fmedia-gallery%2Ffiles-1748688267477-222866406&w=3840&q=75",
     "description": "Enjoy snow-clad peaks, lakes, and monasteries in the serene state of Sikkim — a paradise for nature lovers and peace seekers."
   }
 ];

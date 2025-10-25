@@ -5,7 +5,8 @@ import { ThemeContext } from '../components/Context'
 const Featured = () => {
   const { tours } = useContext(ThemeContext)
   return (
-    <section className='w-full flex flex-col items-center justify-center py-8'>
+    <section className='w-full flex flex-col items-center justify-center py-8 gap-6'>
+      <h1 className='w-full text-xl font-semibold sm:text-4xl lg:text-5xl  text-center'>Enjoy your next trip</h1>
       <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center p-2'>
         {
           tours.slice(0, 6).map((tour) => {
