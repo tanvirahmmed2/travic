@@ -2,6 +2,7 @@ import React from 'react'
 import Featured from '../pages/Featured'
 import Intro from '../pages/Intro'
 import About from '../pages/About'
+import Contact from '../pages/Contact'
 
 
 const Home = () => {
@@ -9,8 +10,8 @@ const Home = () => {
     <section>
       <Intro />
       <Featured />
-      <About/>
-
+      <About />
+      <Contact />
     </section>
   )
 }

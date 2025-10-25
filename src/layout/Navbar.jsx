@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/tours'>Tours</Link>
         <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/blogs'>Blogs</Link>
         <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/about'>About</Link>
-        <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/book'>Book</Link>
+        <Link className='h-full flex items-center justify-center px-4 hover:border-b-2 border-cyan-700' to='/contact'>Contact</Link>
 
       </div>
 
