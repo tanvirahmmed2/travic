@@ -9,7 +9,7 @@ const Tour = () => {
   const { tours } = useContext(ThemeContext)
   const { title } = useParams()
   const data = tours.find((tour) => tour.title === title)
-  const { image, description, location, duration, price, rating, includes, highlights } = data
+  const { image, description, location, duration, price, rating, includes, highlights, departureDates } = data
   return (
     <div className='w-full min-h-[800px] flex flex-col items-center justify-center gap-5 py-8 backdrop-blur-sm p-2 bg-white/60'>
       <div className='w-full md:w-3/4 rounded-lg overflow-hidden border-2 p-2 bg-white relative'>
@@ -18,7 +18,7 @@ const Tour = () => {
       </div>
 
 
-      <h1 className='w-full text-center text-lg md:text-2xl lg:text-3xl font-semibold'>{title} <span className='text-xs'>{location}</span></h1>
+      <h1 className='w-full text-center text-xl md:text-2xl lg:text-3xl font-semibold'>{title} <span className='text-xs'>{location}</span></h1>
 
 
       <p>{description}</p>
@@ -44,13 +44,21 @@ const Tour = () => {
       </div>
 
 
-      <div className='w-full flex flex-col items-center justify-center gap-1'>
-        <div className='w-full text-center lg:w-1/2 flex flex-col md:flex-row items-center justify-center gap-1'>
+      <div className='w-full flex flex-col items-center justify-center gap-3 md:gap-1'>
+        <div className='w-full text-center lg:w-3/4 flex flex-col md:flex-row items-center justify-center gap-1 p-1 md:p-0 md:border-0 border-2'>
           <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Duration: {duration}</p>
           <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Rating: <FontAwesomeIcon icon={faStar} className='text-amber-500' /> {rating}</p>
           <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Price: <FontAwesomeIcon icon={faDollar} /> {price}</p>
         </div>
-        <button onClick={()=> alert('Purchased')} className='w-full lg:w-1/2 text-center shadow-lg bg-white p-1 hover:scale-110 transition duration-500 ease-in-out'>Purchase</button>
+        <div className='w-full text-center lg:w-3/4 flex flex-col md:flex-row items-center justify-center gap-1 p-1 md:p-0 md:border-0 border-2'>
+          <h1 className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Departure</h1>
+          {
+            departureDates.map((e) => {
+              return <p key={e} className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>{e}</p>
+            })
+          }
+        </div>
+        <button onClick={() => alert('Purchased')} className='w-full lg:w-3/4 text-center shadow-lg bg-white p-1 hover:text-emerald-500 transition duration-500 ease-in-out'>Purchase</button>
       </div>
     </div>
   )
