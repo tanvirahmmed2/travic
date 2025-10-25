@@ -13,8 +13,8 @@ const Intro = () => {
         <section className='w-full flex flex-col items-center justify-center gap-6 min-h-[700px]  p-4'>
 
             <div className='w-full flex flex-col items-center justify-center gap-4'>
-                <p className='text-6xl text-center font-semibold'>EXPLORE THE WORLD</p>
-                <p className='text-3xl text-center font-semibold'>{formData.to}</p>
+                <p className='text-6xl text-center font-semibold'>EXPLORE YOUR NEXT TRIP</p>
+                <p className='text-3xl text-center font-semibold'>to {formData.to}</p>
                 <p className='w-full md:w-4/5 lg:w-3/4 text-base lg:text-lg text-center'><span>Travic</span> turn travel dreams into reality. With expert planning, curated destinations, and a passion for exploration, we help travelers discover the world effortlessly. Explore. Experience. Enjoy.</p>
             </div>
 
