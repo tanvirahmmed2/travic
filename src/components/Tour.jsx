@@ -24,7 +24,7 @@ const Tour = () => {
       <p>{description}</p>
 
 
-      <div className='w-full lg:w-4/5 grid grid-cols-2 justify-items-center gap-4'>
+      <div className='w-full lg:w-3/4 grid grid-cols-2 justify-items-center gap-4'>
         <div className='w-full flex flex-col gap-2 bg-white shadow-lg p-4 rounded-md'>
           <h1 className='text-lg md:text-2xl font-semibold'>Special highlights</h1>
           {
