@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { ThemeContext } from '../components/Context'
 
 const Featured = () => {
@@ -11,7 +12,7 @@ const Featured = () => {
         {
           tours.slice(0, 6).map((tour) => {
             const { id, title, location, duration, image, category, description } = tour
-            return <div key={id} className='w-full border-2 bg-white relative overflow-hidden rounded-lg p-1 flex flex-col items-center justify-between gap-2'>
+            return <motion.div initial={{scale:0.9, opacity:0}} whileInView={{scale:1, opacity:1}} transition={{duration:0.6}} key={id} className='w-full border-2 bg-white relative overflow-hidden rounded-lg p-1 flex flex-col items-center justify-between gap-2'>
               <img src={image} alt="" className='w-full rounded-md' />
               <p className='bg-white text-emerald-400 text-xs p-1 px-4 rounded-lg absolute top-3 left-3'>{category}</p>
               <div className='w-full flex flex-col items-center justify-between p-1'>
@@ -22,7 +23,7 @@ const Featured = () => {
                 <p>{duration}</p>
                 <p>{location}</p>
               </div>
-            </div>
+            </motion.div>
           })
         }
       </div>
