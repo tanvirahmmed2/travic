@@ -34,6 +34,7 @@ const Login = () => {
             <input type="password" name='password' id='password' required className='w-full outline-none p-1 px-2 rounded-md border-[1px] border-black' />
           
           </div>
+          <Link to='/recovery' className='w-full text-xs italic text-red-600'>recover your account!</Link>
           <button type='submit' className='border-cyan-700 border-[1px] rounded-md hover:bg-cyan-700 hover:text-white p-1 transition duration-500 ease-in-out'>Login</button>
         </form>
       </motion.div>

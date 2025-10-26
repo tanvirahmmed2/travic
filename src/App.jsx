@@ -11,6 +11,7 @@ import Register from './user/Register'
 import Tours from './pages/Tours'
 import Tour from './components/Tour'
 import Contact from './pages/Contact'
+import Recover from './user/Recover'
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
+          <Route path='/recovery' element={<Recover/>}/>
           <Route path='/*' element={<Error/>}/>
           
 
