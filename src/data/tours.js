@@ -1,5 +1,4 @@
 export const tourData = [
-  // 🇧🇩 BANGLADESH TOURS
   {
     "id": 1,
     "title": "Beach Paradise: Cox’s Bazar & Saint Martin’s",

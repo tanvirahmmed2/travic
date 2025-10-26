@@ -12,6 +12,8 @@ import Tours from './pages/Tours'
 import Tour from './components/Tour'
 import Contact from './pages/Contact'
 import Recover from './user/Recover'
+import Blogs from './pages/Blogs'
+import Blog from './components/Blog'
 
 const App = () => {
   return (
@@ -31,6 +33,8 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/recovery' element={<Recover/>}/>
+          <Route path='/blogs' element={<Blogs/>}/>
+          <Route path='/blogs/:title' element={<Blog/>}/>
           <Route path='/*' element={<Error/>}/>
           
 
