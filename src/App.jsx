@@ -21,6 +21,7 @@ import Loader from './components/Loader'
 import Profile from './user/Profile'
 import Saved from './pages/Saved'
 import Purchased from './pages/Purchased'
+import ProtectedUser from './components/ProtectedUser'
 
 const App = () => {
   const { loader } = useContext(ThemeContext)
@@ -33,7 +34,7 @@ const App = () => {
       <div className='w-full min-h-[800px] flex items-center justify-center mt-14'>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route path='/profile' element={<ProtectedUser><Profile /></ProtectedUser>} />
           <Route path='/saved' element={<Saved />} />
           <Route path='/purchased' element={<Purchased />} />
 

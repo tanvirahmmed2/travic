@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '../components/Context'
 
 const Profile = () => {
+  const {user}= useContext(ThemeContext)
   return (
     <div>
       
