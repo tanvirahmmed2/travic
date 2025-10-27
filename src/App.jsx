@@ -37,7 +37,6 @@ const App = () => {
           <Route path='/profile' element={<ProtectedUser><Profile /></ProtectedUser>} />
           <Route path='/saved' element={<Saved />} />
           <Route path='/purchased' element={<Purchased />} />
-
           <Route path='/tours' element={<Tours />} />
           <Route path='/tours/:title' element={<Tour />} />
           <Route path='/contact' element={<Contact />} />
