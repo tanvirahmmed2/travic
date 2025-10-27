@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { ThemeContext } from '../components/Context'
 
 
 
 const Recover = () => {
+  const {setNotification}= useContext(ThemeContext)
 
 
   const sendToken = async (e) => {
     e.preventDefault()
-    alert('under Construction')
+    setNotification('under Construction')
   }
   return (
     <section className='w-full min-h-[800px] flex items-center justify-center'>

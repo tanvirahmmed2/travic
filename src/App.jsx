@@ -14,12 +14,14 @@ import Contact from './pages/Contact'
 import Recover from './user/Recover'
 import Blogs from './pages/Blogs'
 import Blog from './components/Blog'
+import Notification from './components/Notification'
 
 const App = () => {
   return (
     <div className='w-full relative overflow-x-hidden'  >
       <Navbar />
       <Sidebar />
+      <Notification/>
       <div className='w-full min-h-[800px] flex items-center justify-center mt-14'>
         <Routes>
           <Route path='/' element={<Home/>}/>

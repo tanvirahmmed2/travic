@@ -12,13 +12,15 @@ const ContextProvider = ({children}) => {
   const [menu, setMenu]= useState(false)
   const [tours, setTours]= useState(tourData)
   const [blogs, setBlogs]= useState(blogsData)
+  const [notification, setNotification]= useState(null)
 
 
 
   const ContextValue={
     menu, setMenu,
     tours, setTours,
-    blogs, setBlogs
+    blogs, setBlogs,
+    notification, setNotification
 
   }
 
