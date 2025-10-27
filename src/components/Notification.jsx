@@ -19,11 +19,11 @@ const Notification = () => {
   if (!notification) return null
 
   return (
-    <div className='w-full fixed top-14 h-8 bg-emerald-200 text-white flex flex-row items-center justify-around px-2'>
+    <div className='w-full fixed top-14 h-8 bg-emerald-100 text-black flex flex-row items-center justify-around px-2'>
       <p className=''>{notification}</p>
       <button
         onClick={() => setNotification(null)}
-        className='text-white hover:text-gray-300'
+        className=''
       >
         <FontAwesomeIcon icon={faXmark} />
       </button>

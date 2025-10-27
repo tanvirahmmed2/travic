@@ -3,7 +3,6 @@ import Featured from '../pages/Featured'
 import Intro from '../pages/Intro'
 import About from '../pages/About'
 import Contact from '../pages/Contact'
-import Loader from '../components/Loader'
 
 
 const Home = () => {
@@ -13,7 +12,6 @@ const Home = () => {
       <Featured />
       <About />
       <Contact />
-      <Loader/>
     </section>
   )
 }

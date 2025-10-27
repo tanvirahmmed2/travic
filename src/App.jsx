@@ -15,34 +15,42 @@ import Recover from './user/Recover'
 import Blogs from './pages/Blogs'
 import Blog from './components/Blog'
 import Notification from './components/Notification'
+import { useContext } from 'react'
+import { ThemeContext } from './components/Context'
+import Loader from './components/Loader'
+import Profile from './user/Profile'
+import Saved from './pages/Saved'
+import Purchased from './pages/Purchased'
 
 const App = () => {
+  const { loader } = useContext(ThemeContext)
+  if (loader) return <Loader />
   return (
     <div className='w-full relative overflow-x-hidden'  >
       <Navbar />
       <Sidebar />
-      <Notification/>
+      <Notification />
       <div className='w-full min-h-[800px] flex items-center justify-center mt-14'>
         <Routes>
-          <Route path='/' element={<Home/>}/>
+          <Route path='/' element={<Home />} />
+          <Route path='/profile' element={<Profile />} />
+          <Route path='/saved' element={<Saved />} />
+          <Route path='/purchased' element={<Purchased />} />
 
+          <Route path='/tours' element={<Tours />} />
+          <Route path='/tours/:title' element={<Tour />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/recovery' element={<Recover />} />
+          <Route path='/blogs' element={<Blogs />} />
+          <Route path='/blogs/:title' element={<Blog />} />
+          <Route path='/*' element={<Error />} />
 
-
-
-          <Route path='/tours' element={<Tours/>}/>
-          <Route path='/tours/:title' element={<Tour/>}/>
-          <Route path='/contact' element={<Contact/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/register' element={<Register/>}/>
-          <Route path='/recovery' element={<Recover/>}/>
-          <Route path='/blogs' element={<Blogs/>}/>
-          <Route path='/blogs/:title' element={<Blog/>}/>
-          <Route path='/*' element={<Error/>}/>
-          
 
         </Routes>
       </div>
-      <img src={bgImage} alt="" className='w-full h-screen object-cover fixed top-0 left-0 -z-50'/>
+      <img src={bgImage} alt="" className='w-full h-screen object-cover fixed top-0 left-0 -z-50' />
       <Footer />
 
     </div>
