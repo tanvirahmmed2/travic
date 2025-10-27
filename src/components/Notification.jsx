@@ -19,7 +19,7 @@ const Notification = () => {
   if (!notification) return null
 
   return (
-    <div className='w-full fixed top-14 h-8 bg-black/20 text-white flex flex-row items-center justify-around px-2'>
+    <div className='w-full fixed top-14 h-8 bg-emerald-200 text-white flex flex-row items-center justify-around px-2'>
       <p className=''>{notification}</p>
       <button
         onClick={() => setNotification(null)}
