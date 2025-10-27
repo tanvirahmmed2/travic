@@ -10,7 +10,7 @@ const Intro = () => {
     const {tours}= useContext(ThemeContext)
 
     return (
-        <section className='w-full flex flex-col items-center justify-center gap-6 min-h-[700px]  p-4'>
+        <section className='w-full flex flex-col items-center justify-center gap-6 min-h-[700px]  p-4 backdrop-blur-sm'>
 
             <div className='w-full flex flex-col items-center justify-center gap-4'>
                 <p className='text-6xl text-center font-semibold'>EXPLORE YOUR NEXT TRIP</p>
@@ -21,9 +21,9 @@ const Intro = () => {
 
             <form className='w-5/6 flex flex-col md:flex-row items-center justify-center gap-4'>
 
-                <div className='w-full h-10 flex flex-col items-start justify-between bg-white border-[1px] rounded-lg overflow-hidden px-4 border-red-600'>
+                <div className='w-full h-10 flex flex-col items-start justify-between bg-white border-[1px] rounded-lg overflow-hidden  border-red-600'>
                     
-                    <select name="to" id="to" value={formData.to} onChange={(e) => setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))} className='w-full   outline-none  px-2 h-full'>
+                    <select name="to" id="to" value={formData.to} onChange={(e) => setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))} className='w-full   outline-none   h-full'>
                         {
                             tours.map((tour) => { return <option value={tour.title} key={tour.id}>{tour.title}</option> })
                         }
