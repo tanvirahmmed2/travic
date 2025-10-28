@@ -15,7 +15,6 @@ const ProtectedUser = ({ children }) => {
 
   useEffect(() => {
     if (!checking && user) {
-      setNotification('Already Logged in')
       setRedirect(true)
     }
   }, [checking, user, setNotification])
