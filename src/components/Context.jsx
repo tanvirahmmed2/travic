@@ -17,9 +17,10 @@ const ContextProvider = ({ children }) => {
   const [tours, setTours] = useState(tourData)
   const [blogs, setBlogs] = useState(blogsData)
   const [notification, setNotification] = useState(null)
-  const [user, setUser] = useState(null)
-  const [isAdmin, setIsAdmin] = useState(null)
+  const [user, setUser] = useState([])
+  const [isAdmin, setIsAdmin] = useState(false)
   const [messages, setMessages]= useState([])
+  const [users, setUsers]= useState([])
 
 
 
@@ -76,7 +77,8 @@ const ContextProvider = ({ children }) => {
     api,
     user, setUser,
     isAdmin, setIsAdmin,
-    messages, setMessages
+    messages, setMessages,
+    users, setUsers
 
   }
 

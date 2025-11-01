@@ -56,10 +56,6 @@ const Contact = () => {
               <input type="email" name='email' id='email' required className='w-full px-4 p-2 border-2 outline-none'  />
             </div>
             <div className='w-full flex flex-col items-start justify-center gap-2 '>
-              <label htmlFor="subject">Subject</label>
-              <input type="text" name='subject' id='subject' required className='w-full px-4 p-2 border-2 outline-none'  />
-            </div>
-            <div className='w-full flex flex-col items-start justify-center gap-2 '>
               <label htmlFor="message">Message</label>
               <textarea name="message" id="message" className='w-full px-4 p-2 border-2 outline-none resize-none' ></textarea>
             </div>
