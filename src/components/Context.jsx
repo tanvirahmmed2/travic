@@ -19,8 +19,8 @@ const ContextProvider = ({ children }) => {
   const [notification, setNotification] = useState(null)
   const [user, setUser] = useState([])
   const [isAdmin, setIsAdmin] = useState(false)
-  const [messages, setMessages]= useState([])
-  const [users, setUsers]= useState([])
+  const [messages, setMessages] = useState([])
+  const [users, setUsers] = useState([])
 
 
 
@@ -43,6 +43,7 @@ const ContextProvider = ({ children }) => {
 
   }, [])
 
+
   useEffect(() => {
     const fetchUser = async () => {
       try {
@@ -63,6 +64,37 @@ const ContextProvider = ({ children }) => {
       }
     }
     fetchUser()
+  }, [])
+
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios.get(`${api}/blog`, { withCredentials: true })
+        setBlogs(response.data.payload)
+      } catch (error) {
+        console.log(error.response.data.message)
+
+      }
+
+    }
+    fetchBlogs()
+  }, [])
+
+
+
+  useEffect(() => {
+    const fetchTours = async () => {
+      try {
+        const response = await axios.get(`${api}/tour`, { withCredentials: true })
+        setTours(response.data.payload)
+      } catch (error) {
+        console.log(error.response.data.message)
+
+      }
+
+    }
+    fetchTours()
   }, [])
 
 
