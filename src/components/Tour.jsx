@@ -58,7 +58,7 @@ const Tour = () => {
             })
           }
         </div>
-        <button onClick={() => alert('Purchased')} className='w-full lg:w-3/4 text-center shadow-lg bg-emerald-500 p-1 hover:text-white transition duration-500 ease-in-out'>Book</button>
+        <button onClick={() => alert('Purchased')} className='w-full lg:w-3/4 text-center shadow-lg bg-emerald-500 p-1 text-white hover:bg-black transition duration-500 ease-in-out'>Book</button>
       </div>
     </div>
   )

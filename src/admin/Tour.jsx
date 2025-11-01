@@ -27,12 +27,28 @@ const Tour = () => {
                     <textarea name="description" id="description" className='w-full px-4 p-2 border-2 outline-none resize-none' ></textarea>
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
+                    <label htmlFor="hightlights">Highlights</label>
+                    <input type="text" name='hightlights' id='hightlights' required className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between hightlights' />
+                </div>
+                <div className='w-full flex flex-col items-start justify-center gap-2 '>
+                    <label htmlFor="includes">Includes</label>
+                    <input type="text" name='includes' id='includes' required className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between includes' />
+                </div>
+                <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="tags">Tags</label>
                     <input type="text" name='tags' id='tags' required className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between tags' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
-                    <label htmlFor="reporter">Reporter</label>
-                    <input type="text" name='reporter' id='reporter' required className='w-full px-4 p-2 border-2 outline-none' />
+                    <label htmlFor="departure">Departure</label>
+                    <input type="date" name='departure' id='departure' required className='w-full px-4 p-2 border-2 outline-none' />
+                </div>
+                <div className='w-full flex flex-col items-start justify-center gap-2 '>
+                    <label htmlFor="duration">Duration</label>
+                    <input type="text" name='duration' id='duration' required className='w-full px-4 p-2 border-2 outline-none' placeholder='(2 days / 1 night)'/>
+                </div>
+                <div className='w-full flex flex-col items-start justify-center gap-2 '>
+                    <label htmlFor="price">Price</label>
+                    <input type="number" name='price' id='price' required className='w-full px-4 p-2 border-2 outline-none' placeholder='BDT'/>
                 </div>
                 <button type='submit' className='w-full bg-sky-400 p-1'>Submit</button>
             </form>
