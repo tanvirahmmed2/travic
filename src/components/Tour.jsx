@@ -21,7 +21,7 @@ const Tour = () => {
       <h1 className='w-full text-center text-xl md:text-2xl lg:text-3xl font-semibold'>{title} <span className='text-xs'>{location}</span></h1>
 
 
-      <p>{description}</p>
+      <p className='text-center'>{description}</p>
 
 
       <div className='w-full lg:w-3/4 grid grid-cols-2 justify-items-center gap-4'>
@@ -58,7 +58,7 @@ const Tour = () => {
             })
           }
         </div>
-        <button onClick={() => alert('Purchased')} className='w-full lg:w-3/4 text-center shadow-lg bg-white p-1 hover:text-emerald-500 transition duration-500 ease-in-out'>Purchase</button>
+        <button onClick={() => alert('Purchased')} className='w-full lg:w-3/4 text-center shadow-lg bg-emerald-500 p-1 hover:text-white transition duration-500 ease-in-out'>Book</button>
       </div>
     </div>
   )
