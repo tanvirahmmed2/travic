@@ -1,8 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import axios from 'axios'
 import { ThemeContext } from '../components/Context'
 
 const Member = () => {
-    const { messages, users } = useContext(ThemeContext)
+    const { messages, users, setUsers, api, setNotification } = useContext(ThemeContext)
+
+    useEffect(()=>{
+       const  fetchUser=async()=>{
+            try {
+                const response= await axios.get(`${api}/user`, {withCredentials: true})
+               
+                setUsers(response.data.payload)
+            } catch (error) {
+                setNotification('Failed to fetch user')
+            }
+        }
+        fetchUser()
+        
+    },[setNotification])
+
+
     return (
         <div className='w-full flex flex-col items-center justify-center gap-6'>
             <div className='w-full flex flex-col items-center justify-center gap-4 bg-white p-2 rounded-lg py-4'>
