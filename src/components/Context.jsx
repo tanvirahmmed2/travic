@@ -19,6 +19,7 @@ const ContextProvider = ({ children }) => {
   const [notification, setNotification] = useState(null)
   const [user, setUser] = useState(null)
   const [isAdmin, setIsAdmin] = useState(null)
+  const [messages, setMessages]= useState([])
 
 
 
@@ -74,7 +75,8 @@ const ContextProvider = ({ children }) => {
     notification, setNotification,
     api,
     user, setUser,
-    isAdmin, setIsAdmin
+    isAdmin, setIsAdmin,
+    messages, setMessages
 
   }
 

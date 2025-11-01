@@ -26,6 +26,7 @@ const Sidebar = () => {
       <a className='hover:scale-110 transition duration-300' href="/saved">Saved</a>
       <a className='hover:scale-110 transition duration-300' href="/profile">Profile</a>
       <a className='hover:scale-110 transition duration-300' href="/login">Login</a>
+      <a className='hover:scale-110 transition duration-300' href="/admin/member">Admin</a>
       <p onClick={handleLogout} className='hover:scale-110 transition duration-300 cursor-pointer'>Log out</p>
       
     </div>

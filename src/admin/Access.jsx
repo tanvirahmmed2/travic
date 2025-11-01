@@ -2,7 +2,8 @@ import React from 'react'
 
 const Access = () => {
   return (
-    <div>
+    <div className='w-full  bg-white'>
+        
       
     </div>
   )
