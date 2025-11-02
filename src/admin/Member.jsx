@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import axios from 'axios'
 import { ThemeContext } from '../components/Context'
+import { MdDeleteOutline } from 'react-icons/md'
 
 const Member = () => {
     const { messages, users, setUsers, api, setNotification } = useContext(ThemeContext)
@@ -20,6 +21,17 @@ const Member = () => {
     },[setNotification])
 
 
+    const deleteMessage=async(id)=>{
+        try {
+            const response= await axios.delete(`${api}/message/remove`, {data: {id}, withCredentials: true})
+            setNotification(response.data.message)
+        } catch (error) {
+            console.log(error.response.data)
+            setNotification(error.response.data.message)
+            
+        }
+    }
+
     return (
         <div className='w-full flex flex-col items-center justify-center gap-6'>
             <div className='w-full flex flex-col items-center justify-center gap-4 bg-white p-2 rounded-lg py-4'>
@@ -29,7 +41,7 @@ const Member = () => {
                         <p className='w-full'>Name</p>
                         <p className='w-full'>Message</p>
                         <p className='w-full'>Email</p>
-                        <p className='w-full'>Action</p>
+                        <p className=''>Action</p>
                     </div>
                     {
                         messages.length > 0 ? messages.map((e) => {
@@ -38,7 +50,7 @@ const Member = () => {
                                 <p className='w-full'>{name}</p>
                                 <p className='w-full'>{message}</p>
                                 <p className='w-full'>{email}</p>
-                                <button className='w-full'>Action</button>
+                                <button onClick={()=>deleteMessage(_id)} className=''><MdDeleteOutline/></button>
                             </div>
                         }) : <p>No message found</p>
                     }

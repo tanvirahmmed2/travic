@@ -32,7 +32,7 @@ const App = () => {
       <Navbar />
       <Sidebar />
       <Notification />
-      <div className='w-full min-h-[800px] flex items-center justify-center mt-14'>
+      <div className='w-full min-h-screen bg-white/50 flex items-center justify-center mt-14'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/profile' element={<ProtectedUser><Profile /></ProtectedUser>} />
@@ -52,7 +52,7 @@ const App = () => {
 
         </Routes>
       </div>
-      <img src={bgImage} alt="" className='w-full h-screen object-cover fixed top-0 left-0 -z-50' />
+      <img src={bgImage} alt="" className='w-full blur-sm h-screen object-cover fixed top-0 left-0 -z-50' />
       <Footer />
 
     </div>

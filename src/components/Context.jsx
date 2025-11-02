@@ -73,7 +73,7 @@ const ContextProvider = ({ children }) => {
         const response = await axios.get(`${api}/blog`, { withCredentials: true })
         setBlogs(response.data.payload)
       } catch (error) {
-        console.log(error.response.data.message)
+        console.log(error.response)
 
       }
 
@@ -89,12 +89,28 @@ const ContextProvider = ({ children }) => {
         const response = await axios.get(`${api}/tour`, { withCredentials: true })
         setTours(response.data.payload)
       } catch (error) {
-        console.log(error.response.data.message)
+        console.log(error.response)
 
       }
 
     }
     fetchTours()
+  }, [])
+
+
+
+  useEffect(() => {
+    const fetchMessages = async () => {
+      try {
+        const response = await axios.get(`${api}/message`, { withCredentials: true })
+        setMessages(response.data.payload)
+      } catch (error) {
+        console.log(error.response)
+
+      }
+
+    }
+    fetchMessages()
   }, [])
 
 

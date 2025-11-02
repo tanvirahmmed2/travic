@@ -1,9 +1,41 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { CiMail, CiPhone, CiLocationOn } from "react-icons/ci";
+import { ThemeContext } from '../components/Context';
+import axios from 'axios';
 
 const Contact = () => {
+
+  const {api, setNotification}= useContext(ThemeContext)
+  
+  const [formData, setFormData]= useState({
+    name:'',
+    email:'',
+    message:''
+  })
+
+  const handleChange=(e)=>{
+    const {name, value}= e.target
+    setFormData((prev)=>({...prev, [name]: value}))
+  }
+
+
+  const sendMessage=async(e)=>{
+    e.preventDefault()
+    try {
+      const response = await axios.post(
+        `${api}/message/newmessage`,
+        formData,
+        { withCredentials: true }
+      );
+      setNotification(response.data.message);
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      setNotification(error.response.data.message)
+      console.log(error)
+    }
+  }
   return (
-    <section className='w-full min-h-[800px] p-2 bg-white/60 flex flex-col items-center justify-center gap-8 backdrop-blur-sm'>
+    <section className='w-full min-h-[800px] p-2  flex flex-col items-center justify-center gap-8'>
       <h1 className='text-4xl font-bold text-emerald-600'>Contact Us</h1>
       <p className='text-base sm:text-lg text-center'>Get in touch with our team </p>
       <div className='w-full flex flex-col md:flex-row items-center justify-center gap-4'>
@@ -46,18 +78,18 @@ const Contact = () => {
 
         <div className='w-full flex items-start justify-center flex-col gap-2 p-6 bg-white/30 rounded-xl shadow-lg'>
           <p className='text-2xl font-semibold'>Send us a Message</p>
-          <form  className='w-full flex flex-col items-start justify-center gap-4'>
+          <form  onSubmit={sendMessage} className='w-full flex flex-col items-start justify-center gap-4'>
             <div className='w-full flex flex-col items-start justify-center gap-2 '>
               <label htmlFor="name">Name</label>
-              <input type="text" name='name' id='name' required className='w-full px-4 p-2 border-2 outline-none'  />
+              <input type="text" name='name' id='name' required onChange={handleChange} value={formData.name} className='w-full px-4 p-2 border-2 outline-none'  />
             </div>
             <div className='w-full flex flex-col items-start justify-center gap-2 '>
               <label htmlFor="email">Email</label>
-              <input type="email" name='email' id='email' required className='w-full px-4 p-2 border-2 outline-none'  />
+              <input type="email" name='email' id='email' required  onChange={handleChange} value={formData.email}  className='w-full px-4 p-2 border-2 outline-none'  />
             </div>
             <div className='w-full flex flex-col items-start justify-center gap-2 '>
               <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" className='w-full px-4 p-2 border-2 outline-none resize-none' ></textarea>
+              <textarea name="message" id="message" className='w-full px-4 p-2 border-2 outline-none resize-none' required  onChange={handleChange} value={formData.message}  ></textarea>
             </div>
             
             <button type='submit' className='w-full bg-emerald-500 rounded-lg text-white hover:bg-emerald-600 p-1'>Send Message</button>
