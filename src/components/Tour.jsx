@@ -3,13 +3,13 @@ import { ThemeContext } from './Context'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useParams } from 'react-router-dom'
-import { faDollar, faHeart, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faDollar, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const Tour = () => {
   const { tours } = useContext(ThemeContext)
   const { title } = useParams()
   const data = tours.find((tour) => tour.title === title)
-  const { image, description, location, duration, price, rating, includes, highlights, departureDates } = data
+  const {  description, location, duration, price,  includes, highlights, departure, image} = data
   return (
     <div className='w-full min-h-[800px] flex flex-col items-center justify-center gap-5 py-8 backdrop-blur-sm p-2 bg-white/60'>
       <div className='w-full md:w-3/4 rounded-lg overflow-hidden border-2 p-2 bg-white relative'>
@@ -47,16 +47,12 @@ const Tour = () => {
       <div className='w-full flex flex-col items-center justify-center gap-3 md:gap-1'>
         <div className='w-full text-center lg:w-3/4 flex flex-col md:flex-row items-center justify-center gap-1 p-1 md:p-0 md:border-0 border-2'>
           <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Duration: {duration}</p>
-          <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Rating: <FontAwesomeIcon icon={faStar} className='text-amber-500' /> {rating}</p>
           <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Price: <FontAwesomeIcon icon={faDollar} /> {price}</p>
         </div>
         <div className='w-full text-center lg:w-3/4 flex flex-col md:flex-row items-center justify-center gap-1 p-1 md:p-0 md:border-0 border-2'>
           <h1 className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Departure</h1>
-          {
-            departureDates.map((e) => {
-              return <p key={e} className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>{e}</p>
-            })
-          }
+          <p  className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>{departure}</p>
+          
         </div>
         <button onClick={() => alert('Purchased')} className='w-full lg:w-3/4 text-center shadow-lg bg-emerald-500 p-1 text-white hover:bg-black transition duration-500 ease-in-out'>Book</button>
       </div>

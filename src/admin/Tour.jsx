@@ -56,7 +56,7 @@ const Tour = () => {
             setNotification(response.data.message)
         } catch (error) {
             setNotification(error.response.data.message)
-
+            console.log(error.response.data.error)
         }
 
     }
@@ -65,7 +65,7 @@ const Tour = () => {
 
     const deleteTour = async (id) => {
         try {
-            const response = await axios.delete(`${api}/tour/remve`, { data: { id }, withCredentials: true })
+            const response = await axios.delete(`${api}/tour/remove`, { data: { id }, withCredentials: true })
             setNotification(response.data.message)
         } catch (error) {
             setNotification(error.response.data.message)
@@ -96,8 +96,8 @@ const Tour = () => {
                     <textarea name="description" id="description" required  onChange={handleChange} value={formData.description}  className='w-full px-4 p-2 border-2 outline-none resize-none' ></textarea>
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
-                    <label htmlFor="hightlights">Highlights</label>
-                    <input type="text" name='hightlights' id='hightlights' required  onChange={handleChange} value={formData.highlights}  className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between hightlights' />
+                    <label htmlFor="highlights">Highlights</label>
+                    <input type="text" name='highlights' id='highlights' required  onChange={handleChange} value={formData.highlights}  className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between hightlights' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="includes">Includes</label>
