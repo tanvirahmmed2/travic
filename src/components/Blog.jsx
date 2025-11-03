@@ -8,7 +8,7 @@ const Blog = () => {
   const data = blogs.find((tour) => tour.title === title)
   const { author, date, image, description,tags } = data
   return (
-    <div className='w-full min-h-[800px] flex flex-col items-center justify-center gap-5 py-8 backdrop-blur-sm p-2 bg-white/60'>
+    <div className='w-full min-h-[800px] flex flex-col items-center justify-center gap-5 py-8 backdrop-blur-sm p-2 '>
       <div className='w-full md:w-3/4 rounded-lg overflow-hidden border-2 p-2 bg-white relative'>
         <img src={image} alt="" className='w-full max-h-[600px] object-cover rounded-lg ' />
       </div>

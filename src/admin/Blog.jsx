@@ -40,11 +40,20 @@ const Blog = () => {
             const response= await axios.post(`${api}/blog/new`, newData, {withCredentials:true})
             setNotification(response.data.message)
         } catch (error) {
-            
+            console.log(error.response.data.error)
             setNotification(error.response.data.message)
         }
     }
 
+
+    const deleteBlog= async(id)=>{
+        try {
+            const response= await axios.delete(`${api}/blog/remove`, {data: {id}, withCredentials: true})
+            setNotification(response.data.message)
+        } catch (error) {
+            setNotification(error.response.data.message)
+        }
+    }
 
     return (
         <div className='w-full flex flex-col items-center justify-center gap-6'>
@@ -94,7 +103,7 @@ const Blog = () => {
                                 return <div key={_id} className='w-full flex flex-row items-center justify-between gap-1'>
                                     <Link className='w-full font-semibold' to={`/blogs/${title}`}>{title.slice(0, 20)} <span className='font-light'>...more</span></Link>
                                     <p className='w-full md:flex hidden' >{description.slice(0, 20)}....</p>
-                                    <button><MdDeleteOutline /></button>
+                                    <button onClick={()=>deleteBlog(_id)}><MdDeleteOutline /></button>
                                 </div>
                             })
                         }
