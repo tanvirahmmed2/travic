@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../components/Context'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 import { MdDeleteOutline } from "react-icons/md";
 import { useState } from 'react';
 
 
 const Blog = () => {
-    const { blogs } = useContext(ThemeContext)
+    const { blogs, api, setNotification } = useContext(ThemeContext)
 
     const [formData, setFormData] = useState({
         title: '',
@@ -26,36 +27,52 @@ const Blog = () => {
         }
     }
 
-    const addBlog=(e)=>{
+    const addBlog=async(e)=>{
         e.preventDefault()
+        try {
+            const newData= new FormData()
+            newData.append('title', formData.title)
+            newData.append('description', formData.description)
+            newData.append('reporter', formData.reporter)
+            newData.append('tags', formData.tags)
+            newData.append('location', formData.location)
+            newData.append('image', formData.image)
+            const response= await axios.post(`${api}/blog/new`, newData, {withCredentials:true})
+            setNotification(response.data.message)
+        } catch (error) {
+            
+            setNotification(error.response.data.message)
+        }
     }
+
+
     return (
         <div className='w-full flex flex-col items-center justify-center gap-6'>
             <form onSubmit={addBlog} className='w-full flex flex-col items-start justify-center gap-4 bg-white p-3 rounded-lg'>
                 <h1 className='w-full text-2xl font-semibold text-center'>Add latest blog</h1>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="title">Tilte</label>
-                    <input type="text" name='title' id='title' required className='w-full px-4 p-2 border-2 outline-none' />
+                    <input type="text" name='title' id='title' required onChange={handleChange} value={formData.title} className='w-full px-4 p-2 border-2 outline-none' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="location">Location</label>
-                    <input type="text" name='location' id='location' required className='w-full px-4 p-2 border-2 outline-none' />
+                    <input type="text" name='location' id='location' required  onChange={handleChange} value={formData.location}  className='w-full px-4 p-2 border-2 outline-none' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="image">Image</label>
-                    <input type="file" name='image' id='image' accept='image/*' required className='w-full px-4 p-2 border-2 outline-none' />
+                    <input type="file" name='image' id='image' accept='image/*' required onChange={handleChange} className='w-full px-4 p-2 border-2 outline-none' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="description">Description</label>
-                    <textarea name="description" id="description" className='w-full px-4 p-2 border-2 outline-none resize-none' ></textarea>
+                    <textarea name="description" id="description"  onChange={handleChange} value={formData.description}  className='w-full px-4 p-2 border-2 outline-none resize-none' ></textarea>
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="tags">Tags</label>
-                    <input type="text" name='tags' id='tags' required className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between tags' />
+                    <input type="text" name='tags' id='tags' required  onChange={handleChange} value={formData.tags} className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between tags' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="reporter">Reporter</label>
-                    <input type="text" name='reporter' id='reporter' required className='w-full px-4 p-2 border-2 outline-none' />
+                    <input type="text" name='reporter' id='reporter' required  onChange={handleChange} value={formData.reporter}  className='w-full px-4 p-2 border-2 outline-none' />
                 </div>
                 <button type='submit' className='w-full bg-sky-400 p-1'>Submit</button>
             </form>

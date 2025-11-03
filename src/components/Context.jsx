@@ -1,7 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import { tourData } from '../data/tours'
-import { blogsData } from '../data/blogs'
 
 
 export const ThemeContext = createContext()
@@ -14,8 +12,8 @@ const ContextProvider = ({ children }) => {
 
   const [loader, setLoader] = useState(true)
   const [menu, setMenu] = useState(false)
-  const [tours, setTours] = useState(tourData)
-  const [blogs, setBlogs] = useState(blogsData)
+  const [tours, setTours] = useState([])
+  const [blogs, setBlogs] = useState([])
   const [notification, setNotification] = useState(null)
   const [user, setUser] = useState([])
   const [isAdmin, setIsAdmin] = useState(false)
