@@ -1,54 +1,123 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { ThemeContext } from '../components/Context'
-
+import axios from 'axios';
 import { MdDeleteOutline } from "react-icons/md";
+import { useState } from 'react';
 
 const Tour = () => {
-  const {tours}= useContext(ThemeContext)
-  return (
+    const { tours, api, setNotification } = useContext(ThemeContext)
+
+
+    const [formData, setFormData] = useState({
+        title: '',
+        location: '',
+        image: null,
+        description: '',
+        highlights: '',
+        includes: '',
+        tags: '',
+        duration: '',
+        departure: '',
+        price: '',
+
+
+    })
+
+    const handleChange = (e) => {
+        const { name, value, files } = e.target
+        if (name === 'image') {
+            setFormData((prev) => ({ ...prev, image: files[0] }))
+        } else {
+            setFormData((prev) => ({ ...prev, [name]: value }))
+        }
+    }
+
+    const addTour = async (e) => {
+        e.preventDefault()
+        try {
+            const newData = new FormData()
+            newData.append('title', formData.title)
+            newData.append('description', formData.description)
+            newData.append('location', formData.location)
+            newData.append('image', formData.image)
+            newData.append('highlights', formData.highlights)
+            newData.append('tags', formData.tags)
+            newData.append('includes', formData.includes)
+            newData.append('departure', formData.departure)
+            newData.append('duration', formData.duration)
+            newData.append('price', formData.price)
+
+
+
+
+
+            const response = await axios.post(`${api}/tour/new`, newData, { withCredentials: true })
+            setNotification(response.data.message)
+        } catch (error) {
+            setNotification(error.response.data.message)
+
+        }
+
+    }
+
+
+
+    const deleteTour = async (id) => {
+        try {
+            const response = await axios.delete(`${api}/tour/remve`, { data: { id }, withCredentials: true })
+            setNotification(response.data.message)
+        } catch (error) {
+            setNotification(error.response.data.message)
+
+        }
+
+    }
+
+
+    return (
         <div className='w-full flex flex-col items-center justify-center gap-6'>
-            <form className='w-full flex flex-col items-start justify-center gap-4 bg-white p-3 rounded-lg'>
+            <form onSubmit={addTour} className='w-full flex flex-col items-start justify-center gap-4 bg-white p-3 rounded-lg'>
                 <h1 className='w-full text-2xl font-semibold text-center'>Add new tour package</h1>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="title">Tilte</label>
-                    <input type="text" name='title' id='title' required className='w-full px-4 p-2 border-2 outline-none' />
+                    <input type="text" name='title' id='title' required onChange={handleChange} value={formData.title} className='w-full px-4 p-2 border-2 outline-none' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="location">Location</label>
-                    <input type="text" name='location' id='location' required className='w-full px-4 p-2 border-2 outline-none' />
+                    <input type="text" name='location' id='location' required  onChange={handleChange} value={formData.location} className='w-full px-4 p-2 border-2 outline-none' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="image">Image</label>
-                    <input type="file" name='image' id='image' accept='image/*' required className='w-full px-4 p-2 border-2 outline-none' />
+                    <input type="file" name='image' id='image' accept='image/*' required onChange={handleChange} className='w-full px-4 p-2 border-2 outline-none' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="description">Description</label>
-                    <textarea name="description" id="description" className='w-full px-4 p-2 border-2 outline-none resize-none' ></textarea>
+                    <textarea name="description" id="description" required  onChange={handleChange} value={formData.description}  className='w-full px-4 p-2 border-2 outline-none resize-none' ></textarea>
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="hightlights">Highlights</label>
-                    <input type="text" name='hightlights' id='hightlights' required className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between hightlights' />
+                    <input type="text" name='hightlights' id='hightlights' required  onChange={handleChange} value={formData.highlights}  className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between hightlights' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="includes">Includes</label>
-                    <input type="text" name='includes' id='includes' required className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between includes' />
+                    <input type="text" name='includes' id='includes' required onChange={handleChange} value={formData.includes}  className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between includes' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="tags">Tags</label>
-                    <input type="text" name='tags' id='tags' required className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between tags' />
+                    <input type="text" name='tags' id='tags' required  onChange={handleChange} value={formData.tags}  className='w-full px-4 p-2 border-2 outline-none' placeholder='add (,) between tags' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="departure">Departure</label>
-                    <input type="date" name='departure' id='departure' required className='w-full px-4 p-2 border-2 outline-none' />
+                    <input type="date" name='departure' id='departure' required  onChange={handleChange} value={formData.departure}  className='w-full px-4 p-2 border-2 outline-none' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="duration">Duration</label>
-                    <input type="text" name='duration' id='duration' required className='w-full px-4 p-2 border-2 outline-none' placeholder='(2 days / 1 night)'/>
+                    <input type="text" name='duration' id='duration' required onChange={handleChange} value={formData.duration}  className='w-full px-4 p-2 border-2 outline-none' placeholder='(2 days / 1 night)' />
                 </div>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="price">Price</label>
-                    <input type="number" name='price' id='price' required className='w-full px-4 p-2 border-2 outline-none' placeholder='BDT'/>
+                    <input type="number" name='price' id='price' required onChange={handleChange} value={formData.price}  className='w-full px-4 p-2 border-2 outline-none' placeholder='BDT' />
                 </div>
                 <button type='submit' className='w-full bg-sky-400 p-1'>Submit</button>
             </form>
@@ -61,14 +130,14 @@ const Tour = () => {
 
                 </div>
                 {
-                   tours.length > 0 ? <div className='w-full flex flex-col items-center justify-center gap-4'>
+                    tours.length > 0 ? <div className='w-full flex flex-col items-center justify-center gap-4'>
                         {
                             tours.map((tour) => {
                                 const { title, description, _id } = tour
                                 return <div key={_id} className='w-full flex flex-row items-center justify-between gap-1'>
                                     <Link className='w-full font-semibold' to={`/tours/${title}`}>{title.slice(0, 20)} <span className='font-light'>...more</span></Link>
                                     <p className='w-full md:flex hidden' >{description.slice(0, 20)}....</p>
-                                    <button><MdDeleteOutline /></button>
+                                    <button onClick={() => deleteTour(_id)}><MdDeleteOutline /></button>
                                 </div>
                             })
                         }
