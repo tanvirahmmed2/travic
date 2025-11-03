@@ -2,13 +2,36 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../components/Context'
 import { Link } from 'react-router-dom'
 import { MdDeleteOutline } from "react-icons/md";
+import { useState } from 'react';
 
 
 const Blog = () => {
     const { blogs } = useContext(ThemeContext)
+
+    const [formData, setFormData] = useState({
+        title: '',
+        location: '',
+        image: null,
+        description: '',
+        tags: '',
+        reporter: '',
+    })
+
+    const handleChange = (e) => {
+        const { name, value, files } = e.target
+        if (name === 'image') {
+            setFormData((prev) => ({ ...prev, image: files[0] }))
+        } else {
+            setFormData((prev) => ({ ...prev, [name]: value }))
+        }
+    }
+
+    const addBlog=(e)=>{
+        e.preventDefault()
+    }
     return (
         <div className='w-full flex flex-col items-center justify-center gap-6'>
-            <form className='w-full flex flex-col items-start justify-center gap-4 bg-white p-3 rounded-lg'>
+            <form onSubmit={addBlog} className='w-full flex flex-col items-start justify-center gap-4 bg-white p-3 rounded-lg'>
                 <h1 className='w-full text-2xl font-semibold text-center'>Add latest blog</h1>
                 <div className='w-full flex flex-col items-start justify-center gap-2 '>
                     <label htmlFor="title">Tilte</label>
@@ -36,6 +59,8 @@ const Blog = () => {
                 </div>
                 <button type='submit' className='w-full bg-sky-400 p-1'>Submit</button>
             </form>
+
+
             <div className='w-full flex flex-col itemc justify-center gap-4 bg-white py-4 rounded-lg px-1'>
                 <h1 className='w-full text-center font-semibold text-2xl'>Total blogs : {blogs.length}</h1>
                 <div className='w-full flex flex-row items-center justify-between gap-1'>
