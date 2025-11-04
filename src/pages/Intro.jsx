@@ -5,7 +5,7 @@ import { ThemeContext } from '../components/Context'
 
 const Intro = () => {
     const [formData, setFormData] = useState({
-        to: 'Sundarbans Wildlife Expedition'
+        to: ''
     })
     const {tours}= useContext(ThemeContext)
 

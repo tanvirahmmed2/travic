@@ -15,17 +15,17 @@ const ProtectedUser = ({ children }) => {
 
 
   useEffect(() => {
-    if (!checking && user) {
+    if (!checking && user === null) {
       setRedirect(true)
     }
   }, [checking, user, setNotification])
 
   if (checking) {
-    return <Loader/>
+    return <Loader />
   }
 
   if (redirect) {
-    return <Navigate to="/profile" replace />
+    return <Navigate to="/login" replace />
   }
 
   return children

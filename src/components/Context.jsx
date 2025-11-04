@@ -42,29 +42,27 @@ const ContextProvider = ({ children }) => {
   }, [])
 
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const reponse = await axios.get(`${api}/user/protected`, { withCredentials: true })
-        if (!reponse.data.success) {
-          console.log(reponse)
-        } else {
-          const user = reponse.data.payload
-          setUser(user)
-          if (user.role === 'admin') {
-            setIsAdmin(true)
-          }else{
-            setIsAdmin(false)
-          }
-        }
-      } catch (error) {
-        console.log(error)
+useEffect(() => {
+  const fetchUser = async () => {
+    try {
+      const response = await axios.get(`${api}/user/protected`, { withCredentials: true })
+      if (!response.data.success) {
+        console.log(response)
         setUser(null)
         setIsAdmin(false)
+      } else {
+        const user = response.data.payload
+        setUser(user)
+        setIsAdmin(user.role === 'admin')
       }
+    } catch (error) {
+      console.log(error)
+      setUser(null)
+      setIsAdmin(false)
     }
-    fetchUser()
-  }, [])
+  }
+  fetchUser()
+}, [])
 
 
   useEffect(() => {

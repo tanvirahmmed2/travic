@@ -34,7 +34,7 @@ const App = () => {
       <Navbar />
       <Sidebar />
       <Notification />
-      <div className='w-full min-h-screen bg-white/50 flex items-center mt-14'>
+      <div className='w-full min-h-screen bg-white/50 flex flex-col items-center mt-14'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/profile' element={<ProtectedUser><Profile /></ProtectedUser>} />
