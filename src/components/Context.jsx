@@ -72,7 +72,7 @@ useEffect(() => {
         setBlogs(response.data.payload)
       } catch (error) {
         console.log(error.response)
-
+        setBlogs([])
       }
 
     }
@@ -88,7 +88,7 @@ useEffect(() => {
         setTours(response.data.payload)
       } catch (error) {
         console.log(error.response)
-
+        setTours([])
       }
 
     }

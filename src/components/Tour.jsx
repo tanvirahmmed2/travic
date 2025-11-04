@@ -10,14 +10,14 @@ const Tour = () => {
   const { title } = useParams()
   const data = tours.find((tour) => tour.title === title)
   if(!data) return <p>tour not found</p>
-  
+
   const {  description, location, duration, price,  includes, highlights, departure, image, _id} = data
 
 
   const saveTour=async (id) => {
 
     try {
-      const response= await axios.post(`${api}/user/save`, {data:{id}, withCredentials: true})
+      const response= await axios.post(`${api}/user/savetour`, {id},{ withCredentials: true})
       setNotification(response.data.message)
     } catch (error) {
       setNotification(error.response.data.message || 'failed to save tour')

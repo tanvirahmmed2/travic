@@ -5,7 +5,7 @@ import { ThemeContext } from '../components/Context'
 
 const Intro = () => {
     const [formData, setFormData] = useState({
-        to: ''
+        to: 'Beach Paradise: Cox’s Bazar & Saint Martin’s'
     })
     const {tours}= useContext(ThemeContext)
 

@@ -6,6 +6,7 @@ import { ThemeContext } from '../components/Context'
 
 const Blogs = () => {
     const {blogs}= useContext(ThemeContext)
+    if(blogs.length<0) return <p>No blog data found</p>
   return (
     <section className='w-full flex flex-col items-center justify-center py-8 gap-6 backdrop-blur-sm'>
       <h1 className='w-full text-xl font-semibold sm:text-4xl lg:text-5xl  text-center'>Explore the unseen</h1>
