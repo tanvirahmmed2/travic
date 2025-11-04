@@ -7,7 +7,7 @@ export const ThemeContext = createContext()
 
 
 const ContextProvider = ({ children }) => {
-  const api = 'http://localhost:5000/api'
+  const api = 'https://travic-server.onrender.com/api'
 
 
   const [loader, setLoader] = useState(true)
