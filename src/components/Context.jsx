@@ -15,7 +15,7 @@ const ContextProvider = ({ children }) => {
   const [tours, setTours] = useState([])
   const [blogs, setBlogs] = useState([])
   const [notification, setNotification] = useState(null)
-  const [user, setUser] = useState([])
+  const [user, setUser] = useState(null)
   const [isAdmin, setIsAdmin] = useState(false)
   const [messages, setMessages] = useState([])
   const [users, setUsers] = useState([])
@@ -53,6 +53,8 @@ const ContextProvider = ({ children }) => {
           setUser(user)
           if (user.role === 'admin') {
             setIsAdmin(true)
+          }else{
+            setIsAdmin(false)
           }
         }
       } catch (error) {

@@ -3,11 +3,11 @@ import axios from 'axios'
 import { ThemeContext } from '../components/Context'
 
 const Sidebar = () => {
-  const {menu, setNotification, api}= useContext(ThemeContext)
+  const {menu, setNotification, api, isAdmin, user}= useContext(ThemeContext)
 
   const handleLogout=async()=>{
     try {
-      const response= await axios.post(`${api}/user/logout` , {withCredentials: true})
+      const response= await axios.post(`${api}/user/logout` ,{}, {withCredentials: true})
       setNotification(response.data.message)
       
     } catch (error) {
@@ -24,10 +24,10 @@ const Sidebar = () => {
       <a className='hover:scale-110 transition duration-300' href="/about">About</a>
       <a className='hover:scale-110 transition duration-300' href="/blogs">Blogs</a>
       <a className='hover:scale-110 transition duration-300' href="/saved">Saved</a>
-      <a className='hover:scale-110 transition duration-300' href="/profile">Profile</a>
+      {user !== null && <a className='hover:scale-110 transition duration-300' href="/profile">Profile</a>}
       <a className='hover:scale-110 transition duration-300' href="/login">Login</a>
-      <a className='hover:scale-110 transition duration-300' href="/admin/member">Admin</a>
-      <p onClick={handleLogout} className='hover:scale-110 transition duration-300 cursor-pointer'>Log out</p>
+      {isAdmin && <a className='hover:scale-110 transition duration-300' href="/admin/member">Admin</a>}
+      {user !==null && <p onClick={handleLogout} className='hover:scale-110 transition duration-300 cursor-pointer'>Log out</p>}
       
     </div>
   )

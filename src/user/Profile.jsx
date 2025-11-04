@@ -3,12 +3,10 @@ import { ThemeContext } from '../components/Context'
 
 const Profile = () => {
   const { user } = useContext(ThemeContext)
+  if(user ===null) { return <p>no data found</p>}
+  console.log(user)
   return (
-    <section className='w-full min-h-[800px] flex flex-col items-center justify-center gap-4'>
-      <div className='w-full md:w-3/4 bg-white h-96'>
-        <p>{user.name}</p>
-      </div>
-    </section>
+    <div>{user.name}</div>
   )
 }
 
