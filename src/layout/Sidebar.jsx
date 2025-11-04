@@ -9,6 +9,7 @@ const Sidebar = () => {
     try {
       const response= await axios.post(`${api}/user/logout` ,{}, {withCredentials: true})
       setNotification(response.data.message)
+      window.location.replace('/login')
       
     } catch (error) {
       setNotification(error.response.data.message)
