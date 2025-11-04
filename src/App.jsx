@@ -24,7 +24,7 @@ import Purchased from './pages/Purchased'
 import ProtectedUser from './components/ProtectedUser'
 import Admin from './pages/Admin'
 import ProtectedRoute from './components/ProtectedRoute'
-import AdminProtector from './components/AdminProtector'
+import AdminProtector from './components/AdminProtector' 
 
 const App = () => {
   const { loader } = useContext(ThemeContext)
