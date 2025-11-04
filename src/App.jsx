@@ -24,7 +24,7 @@ import Purchased from './pages/Purchased'
 import ProtectedUser from './components/ProtectedUser'
 import Admin from './pages/Admin'
 import ProtectedRoute from './components/ProtectedRoute' 
-import AdminProtector from './components/AdminProtector'
+import AdminProtectord from './components/AdminProtectord'
 
 const App = () => {
   const { loader } = useContext(ThemeContext)
@@ -40,7 +40,7 @@ const App = () => {
           <Route path='/profile' element={<ProtectedUser><Profile /></ProtectedUser>} />
           <Route path='/saved' element={<ProtectedUser><Saved/></ProtectedUser>} />
           <Route path='/purchased' element={<ProtectedUser><Purchased /></ProtectedUser>} />
-          <Route path='/admin/:title' element={<AdminProtector><Admin /></AdminProtector>} />
+          <Route path='/admin/:title' element={<AdminProtectord><Admin /></AdminProtectord>} />
           <Route path='/tours' element={<Tours />} />
           <Route path='/tours/:title' element={<Tour />} />
           <Route path='/contact' element={<Contact />} />

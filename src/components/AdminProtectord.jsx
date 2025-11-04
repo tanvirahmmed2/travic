@@ -3,7 +3,7 @@ import { ThemeContext } from './Context'
 import { Navigate } from 'react-router-dom'
 import Loader from './Loader'
 
-const AdminProtector = ({children}) => {
+const AdminProtectord = ({children}) => {
   const { user,isAdmin, setNotification } = useContext(ThemeContext)
   const [checking, setChecking] = useState(true)
   const [redirect, setRedirect] = useState(false)
@@ -33,4 +33,4 @@ const AdminProtector = ({children}) => {
 }
 
 
-export default AdminProtector
+export default AdminProtectord
