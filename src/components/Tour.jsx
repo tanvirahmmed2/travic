@@ -1,20 +1,36 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from './Context'
-
+import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useParams } from 'react-router-dom'
-import { faDollar, faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faBangladeshiTakaSign,  faHeart } from '@fortawesome/free-solid-svg-icons';
 
 const Tour = () => {
-  const { tours } = useContext(ThemeContext)
+  const { tours , setNotification, api} = useContext(ThemeContext)
   const { title } = useParams()
   const data = tours.find((tour) => tour.title === title)
-  const {  description, location, duration, price,  includes, highlights, departure, image} = data
+  if(!data) return <p>tour not found</p>
+  
+  const {  description, location, duration, price,  includes, highlights, departure, image, _id} = data
+
+
+  const saveTour=async (id) => {
+
+    try {
+      const response= await axios.post(`${api}/user/save`, {data:{id}, withCredentials: true})
+      setNotification(response.data.message)
+    } catch (error) {
+      setNotification(error.response.data.message || 'failed to save tour')
+      console.log(error)
+      
+    }
+  }
+  
   return (
-    <div className='w-full min-h-[800px] flex flex-col items-center justify-center gap-5 py-8 backdrop-blur-sm p-2 bg-white/60'>
+    <div className='w-full min-h-[800px] flex flex-col items-center justify-center gap-5 py-8 backdrop-blur-sm p-2 '>
       <div className='w-full md:w-3/4 rounded-lg overflow-hidden border-2 p-2 bg-white relative'>
         <img src={image} alt="" className='w-full max-h-[600px] object-cover rounded-lg ' />
-        <p onClick={() => alert('Saved')} className='text-2xl md:text-4xl hover:scale-110 hover:text-pink-500 transition duration-500 ease-in-out cursor-pointer absolute top-4 right-4 text-white'><FontAwesomeIcon icon={faHeart} /></p>
+        <p onClick={() => saveTour(_id)} className='text-2xl md:text-4xl hover:scale-110 hover:text-pink-500 transition duration-500 ease-in-out cursor-pointer absolute top-4 right-4 text-white'><FontAwesomeIcon icon={faHeart} /></p>
       </div>
 
 
@@ -47,7 +63,7 @@ const Tour = () => {
       <div className='w-full flex flex-col items-center justify-center gap-3 md:gap-1'>
         <div className='w-full text-center lg:w-3/4 flex flex-col md:flex-row items-center justify-center gap-1 p-1 md:p-0 md:border-0 border-2'>
           <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Duration: {duration}</p>
-          <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Price: <FontAwesomeIcon icon={faDollar} /> {price}</p>
+          <p className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Price: <FontAwesomeIcon icon={faBangladeshiTakaSign} /> {price}</p>
         </div>
         <div className='w-full text-center lg:w-3/4 flex flex-col md:flex-row items-center justify-center gap-1 p-1 md:p-0 md:border-0 border-2'>
           <h1 className='px-6 p-1 bg-white w-full shadow-lg hover:text-pink-500 transition ease-in-out duration-500 cursor-pointer'>Departure</h1>
