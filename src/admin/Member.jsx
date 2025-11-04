@@ -18,7 +18,7 @@ const Member = () => {
         }
         fetchUser()
         
-    },[setNotification])
+    },[setNotification, api, setUsers])
 
 
     const deleteMessage=async(id)=>{
