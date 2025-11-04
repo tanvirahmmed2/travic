@@ -25,7 +25,8 @@ const Sidebar = () => {
       <a className='hover:scale-110 transition duration-300' href="/blogs">Blogs</a>
       <a className='hover:scale-110 transition duration-300' href="/saved">Saved</a>
       {user !== null && <a className='hover:scale-110 transition duration-300' href="/profile">Profile</a>}
-      <a className='hover:scale-110 transition duration-300' href="/login">Login</a>
+      {user === null && <a className='hover:scale-110 transition duration-300' href="/login">Login</a>}
+      
       {isAdmin && <a className='hover:scale-110 transition duration-300' href="/admin/member">Admin</a>}
       {user !==null && <p onClick={handleLogout} className='hover:scale-110 transition duration-300 cursor-pointer'>Log out</p>}
       

@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
 import { ThemeContext } from './Context'
+import { Navigate } from 'react-router-dom'
 import Loader from './Loader'
 
-const ProtectedUser = ({ children }) => {
-  const { user, setNotification } = useContext(ThemeContext)
+const ProtectedRoute = ({children}) => {
+     const { user, setNotification } = useContext(ThemeContext)
   const [checking, setChecking] = useState(true)
   const [redirect, setRedirect] = useState(false)
 
@@ -15,7 +15,7 @@ const ProtectedUser = ({ children }) => {
 
 
   useEffect(() => {
-    if (!checking && user) {
+    if (!checking && user!==null) {
       setRedirect(true)
     }
   }, [checking, user, setNotification])
@@ -29,6 +29,7 @@ const ProtectedUser = ({ children }) => {
   }
 
   return children
+
 }
 
-export default ProtectedUser
+export default ProtectedRoute

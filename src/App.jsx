@@ -23,6 +23,7 @@ import Saved from './pages/Saved'
 import Purchased from './pages/Purchased'
 import ProtectedUser from './components/ProtectedUser'
 import Admin from './pages/Admin'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const App = () => {
   const { loader } = useContext(ThemeContext)
@@ -42,7 +43,7 @@ const App = () => {
           <Route path='/tours' element={<Tours />} />
           <Route path='/tours/:title' element={<Tour />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/login' element={<Login />} />
+          <Route path='/login' element={<ProtectedRoute><Login /></ProtectedRoute>} />
           <Route path='/register' element={<Register />} />
           <Route path='/recovery' element={<Recover />} />
           <Route path='/blogs' element={<Blogs />} />

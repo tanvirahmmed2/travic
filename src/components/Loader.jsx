@@ -1,7 +1,7 @@
 import React from "react";
 
 const Loader = () => (
-  <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+  <div className="w-full flex flex-col items-center justify-center min-h-screen bg-gray-100">
     <div className="flex space-x-1">
       <div className="h-2 bg-blue-500 rounded transition-all animate-growShrinkX"></div>
       <div className="h-2 bg-blue-400 rounded transition-all animate-growShrinkX" style={{ animationDelay: '0.15s' }}></div>
